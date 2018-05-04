@@ -11,7 +11,7 @@
 //    输入 "interesting" 或者 "really*function"
 //
 // 3. 下划线命名风格的函数
-//    输入 "rif" (不要输入大写的"RIF")
+//    输入 "rif" (大小写都可以)
 
 function example(name, age) {
     // ...

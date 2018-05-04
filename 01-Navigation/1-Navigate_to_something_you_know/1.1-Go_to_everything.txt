@@ -10,6 +10,7 @@ Ctrl+N (IntelliJ)
    输入"example"，可以看到ExampleCode.cs, Example_code.js这几个文件， 
    "GoToFileMemberExample"这个类，Example_code.js中的函数"example"，
    还有若干个名为"ExampleCode"的目录。点击就可以转到相应的位置。
+   还有Go to Text, 显示搜索到的文本
 
 2. 默认显示最近打开的文件
    还可以通过输入进行过滤
@@ -23,10 +24,11 @@ Ctrl+N (IntelliJ)
 5. 使用通配符 - 输入"D*M"可以匹配到"DocumentViewModel"
 
 6. 输入"Person"会搜索到很多结果, 如"AddPerson", "RemovePerson"等等
-   可以使用精确搜索, 在搜索的文字两遍加引号(""), 这样只会搜索到类型Person, 和一些文本
+   可以使用精确搜索, 在搜索的文字两边加引号(""), 这样只会搜索到类型Person, 和一些文本
 
 7. 转到其他库中的类型
-   输入 "Console"
+   输入 "Debugger"
+   注: 原来这里是搜索"Console", 但是现在能搜索到"FSharpConsoleApplication"后就不会扩展到其他库搜索了
 
 8. 包含库类型
    比如要转到System.Data.DataViewManager

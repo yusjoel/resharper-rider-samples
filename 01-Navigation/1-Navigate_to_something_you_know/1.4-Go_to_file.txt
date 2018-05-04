@@ -4,7 +4,7 @@ ReSharper - Navigate - Go to File...
 直接转到一个文件
 
 Ctrl+Shift+T (VS)
-Ctrl+Shift+N
+Ctrl+Shift+N (IntelliJ)
 
 1. 转到"Go_to_file.txt"，输入gotofile，也可以只输入gtf，gtfile，*file.txt
 

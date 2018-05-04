@@ -13,7 +13,8 @@ Ctrl+Shift+Alt+N (IntelliJ)
 3. 加上命名空间， 输入j r k r p n
 
 5. 包含库类型
-   输入Name， 然后按下Ctrl+N
+   输入Name， 然后按下Alt+N
+   再按Alt+N取消
 
 6. 如果没有匹配的符号，转到其他库中的符号
    输入 "console WL"
