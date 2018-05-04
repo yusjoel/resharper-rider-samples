@@ -1,14 +1,7 @@
-﻿// Navigate To - File Nearby
+// 导航到 - 文件附近
 //
-// Displays project structure around our current file: the solution and project is shown,
-// we can see folders and files that are in the same directory as our current file,
-// and easily jump to these or create a new element at a certain location.
+// 显示当前文件附近的工程结构: 包括解决方案, 工程, 同目录的文件夹和文件
+// 通过该功能可以方便的跳转到这些位置, 并且还可以创建新文件夹和文件
 //
-// 1. Put text caret here →
-//
-//    Use the Navigate To menu:
-//      Alt+` (VS)
-//      Ctrl+Shift+G (IntelliJ)
-//
-//    Select "File Nearby" and see a popup menu that lets us navigate around
-//    the current file and folder.
+// 1. 把光标放在这里，执行Navigate To命令 →
+//    按N, 选择 "File Nearby" 可以看到弹出菜单

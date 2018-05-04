@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.ComponentModel;
 using JetBrains.ReSharper.Koans.Navigation.ExampleCode;
 
@@ -61,10 +61,10 @@ namespace JetBrains.ReSharper.Koans.Navigation
     }
 
 
-    // 4. 选中一个定义在其他集合中的接口
-    //    a) 执行Go To Derived Symbols， 显示SimpleComponent在内的3个选项
-    //    b) 执行Navigate to Declaration，如果是第一次会弹框询问默认处理方式， 建议设为Object Explorer
-    //       在Object Explorer中，继续对IComponent使用Go To Derived Symbols
+    // 4. 选中一个定义在其他集合中的接口, 执行Navigate To
+    //    a) 选择Derived Symbols， 显示SimpleComponent在内的多个选项
+    //    b) 选择Declaration，如果是第一次会弹框询问默认处理方式， 建议设为Object Explorer
+    //       在Object Explorer中，继续对IComponent使用Navigate To命令, 选择Derived Symbols
     //       这个时候你能看到大量的衍生类
     //    注：你可以在ReSharper - Options... - Tools - External Source中修改设置
     public class SimpleComponent

@@ -17,12 +17,12 @@ namespace JetBrains.ReSharper.Koans.Navigation
             Customer customer = GetCustomer();
 
             // 2. 选中 SilverCustomer 执行 Go To Base Symbols
-            //    导航到 Customer.
-            //    总是向上跳转一层, 而不是像Go To Derived Symbols命令, 会显示多层
+            //    显示 Customer 和 ICustomer
+            //    Customer被加粗是因为他是SilverCustomer的父类.
             var customer2 = new SilverCustomer("id", "Tim");
 
             // 3. 选中 PercentageDiscount 执行 Go To Base Symbols
-            //    跳转到虚属性 Customer.PercentageDiscount
+            //    显示 Customer.PercentageDiscount 和 ICustomer.PercentageDiscount
             Console.WriteLine(customer2.PercentageDiscount);
         }
 

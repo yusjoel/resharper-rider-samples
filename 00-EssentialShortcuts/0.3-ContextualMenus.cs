@@ -12,7 +12,7 @@ namespace EssentialShortcuts
     //    选择Extension Methods
     // 2. 也可以在类名上按Alt+Enter, 输入"Navigate To", 或者直接输入"Extension Methods"
     //
-    // 更多关于导航的内容会在01 Navigation中介绍
+    // 更多关于导航的内容会在01 Navigation - 4-Contextual_navigation中介绍
     public class NavigateTo
     {
     }
