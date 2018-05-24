@@ -1,11 +1,10 @@
-﻿namespace JetBrains.ReSharper.Koans.Editing
+
+namespace JetBrains.ReSharper.Koans.Editing
 {
-    // Import Completion
+    // 引入补全
     //
-    // Completes symbols not visible in current scope, by adding using statements
-    //
-    // Automatic Completion also does Import Completion. Using Import Completion alone
-    // reduces the candidates in the list
+    // 补全的符号在当前域中并不可见, 需要添加using命令
+    // 自动补全中包含引入补全, 但是单独的使用引入补全可以减少列表中的候选项
     //
     // Shift+Alt+Space (VS)
     // Ctrl+Alt+Space (IntelliJ)
@@ -21,19 +20,19 @@
     {
         public void UsesTypeFromNamespaceNotImported()
         {
-            // 1. Start typing: var provider = new Provider
-            //    Automatic Completion suggests Provider (in JetBrains.ReSharper.Koans.Editing.Services)
-            //    Selecting it will add a using statement automatically
-            // 2. Remove using statement
-            //    Ensure the text says: "var provider = new Provider" and Provider is undefined
-            //    Invoke Basic Completion (Ctrl+Space)
-            //    Basic Completion suggests Provider (in JetBrains.ReSharper.Koans.Editing.Services)
-            //    Selecting it will add a using statement automatically
-            // 3. Remove using statement
-            //    Ensure the text says: "var provider = new Provider" and Provider is undefined
-            //    Invoke Import Completion
-            //    Import Completion suggests Provider (in JetBrains.ReSharper.Koans.Editing.Services)
-            //    Import Completion ALSO has fewer candidates in the list
+            // 1. 输入: var provider = new Provider
+            //    自动补全会建议: Provider (in JetBrains.ReSharper.Koans.Editing.Services)
+            //    选择后会自动加入using命令
+            // 2. 将using命令删除
+            //    此时代码显示为: "var provider = new Provider", Provider没有定义
+            //    将光标放在最后, 执行基本补全(Ctrl + Space)
+            //    基本补全会建议: Provider (in JetBrains.ReSharper.Koans.Editing.Services)
+            //    选择后会自动加入using命令
+            // 3. 再次将using命令删除
+            //    此时代码显示为: "var provider = new Provider", Provider没有定义
+            //    将光标放在最后, 执行引入补全
+            //    引入补全会建议: Provider (in JetBrains.ReSharper.Koans.Editing.Services)
+            //    候选列表会比之前少很多
             //var provider = new Provid
         }
     }

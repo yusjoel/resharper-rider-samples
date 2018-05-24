@@ -1,25 +1,22 @@
-﻿namespace JetBrains.ReSharper.Koans.Editing
+namespace JetBrains.ReSharper.Koans.Editing
 {
-    // Smart Completion
+    // 智能补全
     //
-    // Narrows candidates to those that best suit the current context
+    // 将候选项缩减到最合适当前上下文
     //
     // Ctrl+Alt+Space (VS)
     // Ctrl+Shift+Space (IntelliJ)
 
     public class SmartCompletion
     {
-        // 1. Start typing: string s = 
-        //    Automatic Completion offers Smart Completion items first (string items)
-        //      (followed by local Basic items, wider Basic and then Import items)
-        // 2. Uncomment: string s2 = 
-        //    Invoke Smart Completion at the end of the line
-        //    Smart Completion only shows string based candidates
-        //    (Including methods that return string, such as String.Concat)
-        // 3. Uncomment: string s3 = this.
-        //    Invoke Smart Completion at the end of the line
-        //    Smart Completion only shows string based candidates for the this parameter
-        // Note that the Age property isn't used
+        // 1. 输入: string s = 
+        //    自动补全会先显示智能补全(都是字符串类型), 然后当前作用域内、更大作用域以及需要引入的候选项
+        // 2. 取消注释: string s2 = 
+        //    在行尾执行智能补全
+        //    智能补全只会显示字符串类型的候选项, 包括返回字符串类型的方法, 如String.Concat
+        // 3. 取消注释: string s3 = this.
+        //    在行尾执行智能补全
+        //    智能补全只会显示字符串类型的候选项, 可以看到Age没有被列出
         public void SmartUseString(string stringParameter)
         {
             //string s2 = 
