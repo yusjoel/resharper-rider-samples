@@ -1,45 +1,43 @@
-﻿using NUnit.Framework;
+using NUnit.Framework;
 
 namespace JetBrains.ReSharper.Koans.Editing
 {
-    // Show Parameter Info
+    // 显示参数信息
     //
-    // Shows expected parameter types and names for method calls and overloads
+    // 显示方法及其重载中的参数类型和名称
     //
     // Ctrl+K, P (VS)
     // Ctrl+P (IntelliJ)
-    // Cancel to close
+    // 按ESC取消
     //
-    // Configure behavior in ReSharper → Options → Environment → IntelliSense → Parameter Info
+    // 行为配置 ReSharper → Options → Environment → IntelliSense → Parameter Info
     public class ParameterInfo
     {
         public void Foo()
         {
-            // 1. Show Parameter Info
-            //    Place text caret inside method parameters
-            //    Invoke Parameter Info
+            // 1. 显示参数信息
+            //    将光标放到下面方法的参数中
+            //    执行 Show Parameter Info
             SayHello("Steve");
 
-            // 2. Highlights current parameter
-            //    Place text caret inside method parameters
-            //    Invoke Parameter Info
-            //    Move caret through parameters, see current parameter highlighted in bold
+            // 2. 高亮当前参数
+            //    将光标放到下面方法的参数中
+            //    执行 Show Parameter Info
+            //    移动光标, 当前参数显示为粗体
             Add(1, 2, 3, 4);
 
-            // 3. Overloaded members
-            //    Place text caret inside method parameters
-            //    Invoke Parameter Info
-            //    Scroll through overloaded methods with cursor keys or repeated use of "Show Parameter Info"
-            //    (depends on configuration)
+            // 3. 显示重载
+            //    将光标放到下面方法的参数中
+            //    执行 Show Parameter Info
+            //    按上下键, 切换不同的重载函数
             Assert.AreEqual(12, 12);
 
-            // 4. Compact view of overloaded members
-            //    Edit configuration (ReSharper → Options → Environment → IntelliSense → Parameter Info)
-            //    Uncheck "Display all signatures at once"
-            //    Place text caret inside method parameters
-            //    Invoke Parameter Info
-            //    Cycle through overloaded methods with cursor keys or repeated use of "Show Parameter Info"
-            //    (depends on configuration)
+            // 4. 重载成员的紧凑视图
+            //    ReSharper → Options → Environment → IntelliSense → Parameter Info
+            //    取消 "Display all signatures at once" (一次性显示所有签名)
+            //    将光标放到下面方法的参数中
+            //    执行 Show Parameter Info
+            //    按上下键, 切换不同的重载函数
             Assert.AreEqual(12, 12);
         }
 

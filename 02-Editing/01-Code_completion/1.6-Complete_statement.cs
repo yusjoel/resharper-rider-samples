@@ -1,10 +1,10 @@
-﻿using System;
+using System;
 
 namespace JetBrains.ReSharper.Koans.Editing
 {
-    // Complete Statement
+    // 语句补全
     //
-    // Finish the current statement and move the caret to the next position ready for editing
+    // 补全当前的语句,并且将光标移动下一个可编辑的位置.
     //
     // Ctrl+Shift+Enter (VS + IntelliJ)
 
@@ -12,30 +12,27 @@ namespace JetBrains.ReSharper.Koans.Editing
     {
         public void CompleteSimpleStatement()
         {
-            // 1. Complete simple statement
-            //    Uncomment the uncompleted statement below
-            //    Place the caret anywhere in the statement
-            //    Invoke Complete Statement
+            // 1. 补全简单的语句
+            //   取消下面语句的注释, 将光标放到语句内随意的位置
+            //   执行 Complete Statement
 
             // Console.WriteLine("Hello
         }
 
         public void CompleteIfStatement()
         {
-            // 2. Complete if statement
-            //    Uncomment the uncompleted if statement below
-            //    Place the caret anywhere in the statement
-            //    Invoke Complete Statement
+            // 2. 补全 if 语句
+            //    取消下面语句的注释, 将光标放到语句内随意的位置
+            //    执行 Complete Statement
 
             //if (true
         }
 
         public void CompleteComplexStatment()
         {
-            // 3. Complete if statement
-            //    Uncomment the uncompleted if statement below
-            //    Place the caret anywhere in the statement
-            //    Invoke Complete Statement
+            // 3. 补全复杂语句
+            //    取消下面语句的注释, 将光标放到语句内随意的位置
+            //    执行 Complete Statement
 
             //Console.WriteLine(Blah("Hello"
         }

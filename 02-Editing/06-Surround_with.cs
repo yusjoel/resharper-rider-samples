@@ -1,40 +1,39 @@
-﻿using System;
+using System;
 
 namespace JetBrains.ReSharper.Koans.Editing
 {
-    // Surround With
+    // 包围
     //
-    // Replace selection with text that includes current selection
+    // 将选中的内容替换成指定内容, 并将选中内容包含在内
     //
     // Ctrl+E, U (VS)
     // Ctrl+Alt+J (IntelliJ)
     // Alt+Enter
     //
-    // See also Live Templates
+    // 参见 Live Templates
 
     public class SurroundWith
     {
         public void SurroundSingleLineWithTryCatch()
         {
-            // 1. Place the caret on the following line
-            //    Invoke Surround With
-            //    Select try..catch
-            //    Edit the hotspot and hit tab to complete
+            // 1. 将光标放到下面的代码中
+            //    执行 Surround With
+            //    选择 8. try
             Console.WriteLine("This might throw");
         }
 
         public void SurroundMultipleLinesWithTryCatch()
         {
-            // 2. Select the following lines
-            //    Invoke Surround with
-            //    Select try..catch
-            //    Edit the hotspot and hit tab to complete
+            // 2. 选中下面的两行代码
+            //    执行 Surround with
+            //    选择 8. try
             Console.WriteLine("Hello");
             Console.WriteLine("World");
         }
 
         public void SurroundWithContextAction()
         {
+            // 实验无效果
             // 3. Select the Console.WriteLine statement
             //    Invoke Surround With by using Alt+Enter
             //    Select { }
