@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 
 namespace JetBrains.ReSharper.Koans.Editing
 {
@@ -6,10 +6,10 @@ namespace JetBrains.ReSharper.Koans.Editing
     {
         public void CreateFromUsage(int a, int b)
         {
-            // 1. Create from usage
-            //    Uncomment these lines
-            //    Alt+Enter on Calculator and create from usage
-            //    Alt+Enter on Add and create from usage - select return type, parameter type usage, implement method
+            // 1. 根据使用创建代码
+            //    取消下面几行代码的注释
+            //    选中"Calculator", 按下Alt+Enter, 选择Create type 'Calculator'
+            //    选中"Add", 按下Alt+Enter, 选择Create method 'Calculator.Add'
 
             //var calculator = new Calculator();
             //if (calculator.Add(a, b) > 100)
@@ -20,13 +20,13 @@ namespace JetBrains.ReSharper.Koans.Editing
         {
             const int result = 23;
 
-            // 2. Change All Local
-            //    Update all usages of an undefined symbol in the current method
-            //    Uncomment broken code
-            //    Alt+Enter on undefined symbol
-            //    Select Change all local 'value'
-            //    ReSharper suggests alternatives that fit - result from local method, and NewValue field
-            //    Accepting change only affects this method
+            // 2. 修改所有局部变量
+            //    修改当前方法内未定义的符号所有的使用
+            //    取消下面几行代码的注释
+            //    选中未定义的符号"value", 按Alt+Enter
+            //    选择 Change all local 'value'
+            //    ReSharper会建议几个合适的选项: 当前方法内的"result", 和字段"NewValue"
+            //    选择其中一个修改所有value的使用
 
             //Console.WriteLine(value);
             //Console.WriteLine(value);
@@ -39,14 +39,13 @@ namespace JetBrains.ReSharper.Koans.Editing
         {
             const int localValue = 100;
 
-            // 2. Change All
-            //    Update all usages of an undefined symbol across methods
-            //    Uncomment broken code below, and in ChangeAll2
-            //    Alt+Enter on undefined symbol
-            //    Select Change all 'value'
-            //    ReSharper suggests alternatives that fit - NewValue field, but not localValue
-            //      (it's not accessible from ChangeAll2)
-            //    Accepting change only affects this method and ChangeAll2
+            // 2. 修改所有变量
+            //    修改各个方法内未定义的符号所有的使用
+            //    取消下面几行代码的注释, 还有ChangeAll2内的代码的注释
+            //    选中未定义的符号"value", 按Alt+Enter
+            //    选择 Change all 'value'
+            //    ReSharper会建议字段"NewValue", 但是不会包括局部变量localValue
+            //    接受这唯一的建议, 修改所有value的使用
 
             //Console.WriteLine(value);
             //Console.WriteLine(value);
@@ -60,4 +59,5 @@ namespace JetBrains.ReSharper.Koans.Editing
             //Console.WriteLine(value);
         }
     }
+
 }

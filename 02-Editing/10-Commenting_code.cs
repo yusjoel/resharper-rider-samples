@@ -1,33 +1,33 @@
-﻿using System;
+using System;
 
 namespace JetBrains.ReSharper.Koans.Editing
 {
-    // Toggle line comment
+    // 切换行注释
     //
     // Ctrl+Alt+/ (VS)
     // Ctrl+/ (IntelliJ)
 
-    // Toggle block comment
+    // 切换块注释
     //
     // Ctrl+Shift+/ (VS + IntelliJ)
 
-    // 1. Toggle comment on single line
-    //    Place caret on line below, select Ctrl+D
+    // 1. 切换单行的注释
+    //    将光标放在下面这行内, 执行Toggle line comment
     using System.Collections;
 
-    // 2. Toggle comment on multiple lines
-    //    Select both lines, invoke Toggle line comment
-    //    Toggle line comment to uncomment again
+    // 2. 切换多行的注释
+    //    选择下面两行代码, 执行Toggle line comment
+    //    再执行一次取消注释
     using System.Collections;
     using System.Data;
 
-    // 3. Toggle block comment
-    //    Inserts block comment at text caret location
-    //    Toggle removes it again
+    // 3. 切换块注释
+    //    将光标放在下面这行代码的最后, 执行Toggle block comment
+    //    再执行一次取消注释
     using System.Collections;
 
-    // 4. Comment selection with block comment
-    //    Select some text, invoke block comment
-    //    Only creates block comment, doesn't remove
+    // 4. 对选中区域添加块注释
+    //    选中下面这行代码, 执行Toggle block comment
+    //    然后再选中整块注释, 执行Toggle block comment进行取消
     using System.Collections;
 }
