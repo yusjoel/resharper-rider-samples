@@ -3,7 +3,7 @@ namespace EssentialShortcuts
     // 最重要的快捷键： Alt+Enter
     //
     // 快速修正检查到的问题（波浪线），或者根据光标的位置执行上下文相关的操作。
-    // 左侧的不同的图标代表不同的功能，比如黄色灯泡代表修正警告， 红色灯泡代表修正错误， 榔头代表执行上下文相关的操作。
+    // 左侧的不同的图标代表不同的功能，比如黄色灯泡代表修正警告， 红色灯泡代表修正错误， 锤子代表执行上下文相关的操作。
 
     // 1. 对检查到的问题使用QuickFix
     //    下面的类名不符合ReSharper的命名风格
@@ -20,8 +20,8 @@ namespace EssentialShortcuts
         public static string FormatString(string arg)
         {
             // 2. 上下文相关的操作
-            //    选中下面这行代码中的arg， 这次左侧显示了榔头图标， 说明可以执行和arg有关的操作
-            //    点击榔头或者按下Alt+Enter, 在弹出菜单中选择"Convert concatenation to interpolation"
+            //    选中下面这行代码中的arg， 这次左侧显示了锤子图标， 说明可以执行和arg有关的操作
+            //    点击锤子或者按下Alt+Enter, 在弹出菜单中选择"Convert concatenation to interpolation"
             //    注: 原来是 "To String.Format invocation", 现在点右侧的箭头也可以弹出
             return "Hello" + arg + "World";
         }

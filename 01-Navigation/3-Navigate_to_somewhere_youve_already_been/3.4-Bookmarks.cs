@@ -10,7 +10,7 @@ namespace JetBrains.ReSharper.Koans.Navigation
     // ReSharper.ReSharper_BookmarksBookmarksMenu 可以改成Alt+Shift+`
     //
     // 1. 使用Go To File Member功能(Alt+\)跳转到MethodOne,
-    //    按下Ctrl+Shift+1设置书签, 左边会出现书签1的标记 (可能会被其他标记覆盖, 如灯泡, 榔头之类)
+    //    按下Ctrl+Shift+1设置书签, 左边会出现书签1的标记 (可能会被其他标记覆盖, 如灯泡, 锤子之类)
     // 
     // 2. 导航到MethodTwo, MethodThree, 分别设置书签2, 书签3
     //
