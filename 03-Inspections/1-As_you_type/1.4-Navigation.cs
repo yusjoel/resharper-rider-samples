@@ -1,25 +1,25 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
 namespace JetBrains.ReSharper.Koans.Inspections
 {
-    // Navigate between highlights
+    // 在高亮之间导航
     //
-    // Alt+PageUp and Alt+PageDn (VS)
-    // F12 and Shift+F12 (IntelliJ)
+    // Alt+PageUp / Alt+PageDn (VS)
+    // F12 / Shift+F12 (IntelliJ)
     //
-    // Navigate between errors
+    // 在错误之间导航
     //
-    // Shift+Alt+PageUp and ShiftAlt+PageDown (VS)
-    // Alt+F12 and Shift+Alt+F12 (IntelliJ)
+    // Shift+Alt+PageUp / ShiftAlt+PageDown (VS)
+    // Alt+F12 / Shift+Alt+F12 (IntelliJ)
 
     public class Navigation
     {
         public string ErrorHighlight()
         {
-            // 1. Replace null with 3000 to make an error highlight
+            // 1.将"null"替换成3000, 让这里出现一个错误高亮
             return null;
         }
 
@@ -42,21 +42,17 @@ namespace JetBrains.ReSharper.Koans.Inspections
             PrivateMethodCanBeMadeStatic();
         }
 
-        // 2. Hints are not navigable
+        // 2. 提示高亮不会被导航
         private void PrivateMethodCanBeMadeStatic()
         {
         }
 
         public void DeadCode()
         {
-            // 5. Highlights code that is redundant or unreachable
-            //    Shows as greyed out
-            //    Hover mouse over to see tooltip: "Method invocation is skipped..."
             ConditionalMethod();
 
             return;
 
-            // "Code is unreachable"
             Console.WriteLine("Hello");
         }
 

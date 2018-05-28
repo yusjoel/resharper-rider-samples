@@ -1,33 +1,31 @@
-﻿namespace JetBrains.ReSharper.Koans.Inspections
+namespace JetBrains.ReSharper.Koans.Inspections
 {
-    // Context actions
+    // 上下文相关操作
     //
-    // Similar to quick fixes, but tied to a code block, not a highlight
+    // 和快速修正类似, 但是和代码块相关联, 而不是和高亮
     //
-    // Alt+Enter whenever hammer gutter icon is visible
+    // 当显示锤子提示符时, 按Alt+Enter
     //
-    // NOTE: ReSharper has HUNDREDS of context actions. This file provides a very small sample
+    // 注: ReSharper 有上百个上下文相关操作, 这里只提供了很少几个例子.
 
     public class ContextActions
     {
-        // 1. Place caret on public below
-        //    Note the hovering "hammer" icon. This indicates a context action is available
-        //    Alt+Enter and select "To Private" to make the method private
+        // 1. 将光标放在下面的"public"上
+        //    可以看到左侧出现了锤子图标, 这说明这里有上下文相关操作存在
+        //    按Alt+Enter 然后选择 "To Private", 可以把这个方法改成私有
         public void MakePublicMethodPrivate()
         {
         }
 
-        // 2. Apply context action
-        //    Place text caret on "arg"
-        //    Note the hammer action - a context action is available (no squiggly!)
-        //    Hit Alt+Enter, select "To String.Format invocation"
+        // 2. 将光标放在下面return语句的"arg"上
+        //    可以看到左侧出现了锤子图标, 这说明这里有上下文相关操作存在
+        //    按 Alt+Enter, 选择 "Convert concatenation to interpolation"
         public string ConcatenatingString(string arg)
         {
             return "Hello" + arg + "World";
         }
 
-        // 3. Context actions can be configured in the ReSharper → Options Dialog
-        //    Configured per language. Select Code Editing → C# → Context Actions,
-        //    or VB.Net, JavaScript, XML, Build Scripts, etc
+        // 3. 打开菜单: ReSharper → Options... , 选择 Code Editing → Context actions,
+        //    再根据语言选择, 如C#, VB.Net, JavaScript, XML, Build Scripts, 等等
     }
 }

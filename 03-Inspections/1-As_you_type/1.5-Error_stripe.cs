@@ -1,23 +1,23 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
 namespace JetBrains.ReSharper.Koans.Inspections
 {
-    // Highlights are reflected in the Error Stripe on the right of the editor
+    // 高亮会反应在文本编辑器右侧的错误条上
     //
-    // 1. Mouse over each mark in the Error Stripe
-    //    See tooltip
-    //    Click the mark to navigate
-    // 2. Note the icon at the top right. Shows if there are any warnings, suggestions or errors outstanding
-    //    "Code to green" - aim for a green tick
+    // 1. 将鼠标停留在错误条的每个标记上
+    //    可以看到提示文字
+    //    点击标记可以导航到代码
+    // 2. 注意右上方的图标. 显示当前代码是否有警告、建议或者错误存在
+    //    目标是让这个图标变绿
 
     public class ErrorStripe
     {
         public string ErrorHighlight()
         {
-            // 1. Replace null with 3000 to make an error highlight
+            // 1. 将"null"替换成3000, 让这里出现一个错误高亮
             return null;
         }
 
@@ -40,21 +40,17 @@ namespace JetBrains.ReSharper.Koans.Inspections
             PrivateMethodCanBeMadeStatic();
         }
 
-        // 2. Hints are not shown in the Error Stripe
+        // 2.  提示高亮不会出现在错误条上
         private void PrivateMethodCanBeMadeStatic()
         {
         }
 
         public void DeadCode()
         {
-            // 5. Highlights code that is redundant or unreachable
-            //    Shows as greyed out
-            //    Hover mouse over to see tooltip: "Method invocation is skipped..."
             ConditionalMethod();
 
             return;
 
-            // "Code is unreachable"
             Console.WriteLine("Hello");
         }
 

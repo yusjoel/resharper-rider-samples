@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
@@ -9,10 +9,10 @@ namespace JetBrains.ReSharper.Koans.Inspections
     {
         public string ErrorHighlight()
         {
-            // 1. Highlights code that is incorrect, and will most likely fail to compile
-            //    Replace the "null" with 3000 below
-            //    ReSharper shows an error highlight (red squiggly)
-            //    Hover mouse over to see tooltip: "Cannot convert expression type 'int' to return type 'string'"
+            // 1. 高亮不正确的、很可能会编译不过的代码
+            //    将下面的"null"替换成3000
+            //    ReSharper 用红色的波浪线高亮错误的地方
+            //    将鼠标放在代码上, 会提示: "Cannot convert expression type 'int' to return type 'string'"
             return null;
         }
 
@@ -20,18 +20,18 @@ namespace JetBrains.ReSharper.Koans.Inspections
         {
             const int condition = 42;
 
-            // 2. Highlights code that is potentially incorrect and should be changed
-            //    Shown as a blue squiggly underline
-            //    Hover mouse over to see tooltip: "Expression is always true"
+            // 2. 高亮潜在的不正确的、应该修正的代码
+            //    ReSharper 用蓝色的波浪线标记出来
+            //    将鼠标放在代码上, 会提示: "Expression is always true"
             if (condition == 42)
                 Console.WriteLine("True");
         }
 
         public void SuggestionHighlight()
         {
-            // 3. Highlights code and suggests making a change
-            //    Shows as a green squiggly underline
-            //    Hover mouse over to see tooltip: "Use method Any()"
+            // 3. 高亮建议修改的代码
+            //    ReSharper 用绿色的波浪线标记出来
+            //    将鼠标放在代码上, 会提示: "Use method Any()"
             var files = Directory.GetFiles(@"C:\temp", "*.txt");
             if (files.Count() > 0)
                 Console.WriteLine("Got some!");
@@ -42,23 +42,23 @@ namespace JetBrains.ReSharper.Koans.Inspections
             PrivateMethodCanBeMadeStatic();
         }
 
-        // 4. Highlights code with a suggestion for a change, but the suggestion is optional
-        //    Shows as 3 green dots under the start of the highlighted region
-        //    Hover mouse over to see tooltip: "Method 'PrivateMethodCanBeMadeStatic' can be made static"
+        // 4. 高亮建议修改的代码， 但这个建议接受与否是可选的
+        //    ReSharper会在高亮区域的开始处显示3个绿色小点
+        //    将鼠标放在代码上, 会提示: "Method 'PrivateMethodCanBeMadeStatic' can be made static"
         private void PrivateMethodCanBeMadeStatic()
         {
         }
 
         public void DeadCode()
         {
-            // 5. Highlights code that is redundant or unreachable
-            //    Shows as greyed out
-            //    Hover mouse over to see tooltip: "Method invocation is skipped..."
+            // 5. 高亮冗余的或者无法执行到的代码
+            //    这些代码会显示为灰色
+            //    将鼠标放在下面这行代码, 会提示: "Method invocation is skipped..."
             ConditionalMethod();
 
             return;
 
-            // "Code is unreachable"
+            // 将鼠标放在下面这行代码, 会提示: "Code is unreachable"
             Console.WriteLine("Hello");
         }
 

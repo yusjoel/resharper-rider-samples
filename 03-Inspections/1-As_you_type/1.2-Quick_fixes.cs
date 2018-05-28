@@ -1,13 +1,13 @@
-﻿using System;
+using System;
 using System.Diagnostics;
 using System.IO;
 using System.Linq;
 
 namespace JetBrains.ReSharper.Koans.Inspections
 {
-    // Quick Fixes
+    // 快速修正
     //
-    // Provides an automated fix for a highlight
+    // 对高亮代码提供自动的修正
     //
     // Alt+Enter
 
@@ -15,32 +15,32 @@ namespace JetBrains.ReSharper.Koans.Inspections
     {
         public string ErrorHighlight()
         {
-            // 1. Fix error highlight by changing return type of method, or returning a string
-            //    Replace the "null" with 3000 below
-            //    ReSharper shows an error highlight
-            //    Place caret on highlighted region and press Alt+Enter
-            //    Select "Change type of method 'ErrorHighlight' to 'int'"
-            //    Or "Call ToString()"
-            return null;    // Replace with 3000
+            // 1. 修正错误高亮, 自动提示将返回类型改成int, 或者调用ToString()
+            //    将下面的"null"替换成3000
+            //    ReSharper会显示错误的高亮
+            //    将光标放在高亮区域, 按Alt+Enter
+            //    选择 "Change type of method 'ErrorHighlight' to 'int'"
+            //    或 "Call ToString()"
+            return null;    // 这里换成3000
         }
 
         public void WarningHighlight()
         {
             const int condition = 42;
 
-            // 2. Fix warning highlight by quick fix
-            //    Place caret on highlighted region and press Alt+Enter
-            //    Select to replace if statement with the contents of the branch
-            //    Or replace with the constant "true"
+            // 2. 修正警告高亮
+            //    将光标放在高亮区域, 按Alt+Enter
+            //    选择 "Replace 'if' statement with respective branch"
+            //    或 "Replace expression with 'true'"
             if (condition == 42)
                 Console.WriteLine("True");
         }
 
         public void SuggestionHighlight()
         {
-            // 3. Make suggested replacement by quick fix
-            //    Place caret on highlighted region and press Alt+Enter
-            //    Select "Use method Any()" to replace the call to Count()
+            // 3. 修正建议高亮
+            //    将光标放在高亮区域, 按Alt+Enter
+            //    选择 "Use method Any()"
             var files = Directory.GetFiles(@"C:\temp", "*.txt");
             if (files.Count() > 0)
                 Console.WriteLine("Got some!");
@@ -51,9 +51,9 @@ namespace JetBrains.ReSharper.Koans.Inspections
             PrivateMethodCanBeMadeStatic();
         }
 
-        // 4. Make hint replacement by quick fix
-        //    Place caret on highlighted region and press Alt+Enter
-        //    Select Make method 'PrivateMethodCanBeMadeStatic' static to change the method
+        // 4. 修正提示高亮
+        //    将光标放在高亮区域, 按Alt+Enter
+        //    选择 "Make 'PrivateMethodCanBeMadeStatic' static"
         private void PrivateMethodCanBeMadeStatic()
         {
         }
@@ -63,9 +63,9 @@ namespace JetBrains.ReSharper.Koans.Inspections
             return;
 
 
-            // 5. Remove unreachable code by quick fix
-            //    Place caret on highlighted region and press Alt+Enter
-            //    Select Remove unreachable code, or Uncomment unreachable code
+            // 5. 删除无法执行到的代码
+            //    将光标放在高亮区域, 按Alt+Enter
+            //    选择 "Remove unreachable code" 或 "Uncomment unreachable code"
             Console.WriteLine("Hello");
         }
     }
