@@ -2,20 +2,19 @@
 
 namespace JetBrains.ReSharper.Koans.Inspections
 {
-    // Inspect This menu - Call tracking
+    // "检查这里"菜单 - 调用跟踪
     //
-    // View incoming and outgoing calls for methods
+    // 查看调用和被调用的方法
     //
     // Ctrl+Shift+Alt+A (VS/IntelliJ)
 
     public class CallTracking
     {
-        // 1. Show all calls made by MethodOne
-        //    Place caret on MethodOne and Invoke Inspect This
-        //    Select Outgoing Calls
-        //    Results are displayed in a new Inspection Window
-        //    Expanding the tree dives deeper into the call stack
-        //    Expand the tree down to MethodFive to see the methods called there
+        // 1. 显示MethodOne调用的方法
+        //    将光标放在"MethodOne"上, 执行Inspect This
+        //    选择 Outgoing Calls
+        //    结果会显示在一个新的检查窗口
+        //    展开树状结构, 可以深入到调用堆栈中, 最后可以看到调用了方法MethodFive
         public void MethodOne()
         {
             MethodTwo();
@@ -39,14 +38,13 @@ namespace JetBrains.ReSharper.Koans.Inspections
             MethodSix();
         }
 
-        // 2. Show all calls made to MethodFive
-        //    Place the caret on MethodFive
-        //    Invoke Incoming Calls
-        //    Results are displayed in a new Inspection Window
-        //    Expanding the tree walks further up the call stack
-        //    Expand the tree down to MethodFive to see the methods called there
+        // 2. 显示所有调用MethodFive的方法
+        //    将光标放在"MethodFive"上, 执行Inspect This
+        //    选择 Incoming Calls
+        //    结果会显示在一个新的检查窗口
+        //    展开树状结构, 可以在调用堆栈中向上回溯, 最后看到最终的调用者是MethodOne
         //
-        // 3. Enable the preview pane in the results window
+        // 3. 点击Show Preview按钮, 打开结果窗口中的预览面板
         public void MethodFive()
         {
             Console.WriteLine();

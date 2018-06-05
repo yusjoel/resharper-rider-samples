@@ -2,21 +2,20 @@
 
 namespace JetBrains.ReSharper.Koans.Inspections
 {
-    // Inspect This - Value Tracking
+    // "检查这里"菜单 - 值跟踪
     //
-    // Follow a value between calls
+    // 跟踪调用中的值
     //
     // Ctrl+Shift+Alt+A (VS/IntelliJ)
     public class ValueTracking
     {
-        // 1. Find where the "value" parameter is eventually used
-        //    Place the caret on the value parameter
-        //    Invoke Inspect This. Select Value Destination
-        //    The results are shown in a new window
-        //    The initial results show the usages in MethodOne
-        //    Expanding the tree shows the usages in called methods
-        //    Drill down the call stack, through lambda calls and properties
-        //    Find where the value is eventually used
+        // 1. 寻找参数"value"最终用到了哪里
+        //    将光标放在"value"上, 执行Inspect This
+        //    选择 Value Destination (值的去向)
+        //    结果会显示在一个新的检查窗口
+        //    第一个结果显示该值在MethodOne中被使用
+        //    展开树状结构, 显示该值在调用的方法中的使用
+        //    即便是通过Lambda表达式和属性, 也可以在调用堆栈中向下深入, 找到该值最终的使用
         public void MethodOne(int value)
         {
             if (value%2 == 0)
@@ -56,13 +55,13 @@ namespace JetBrains.ReSharper.Koans.Inspections
 
         private void MethodFive(int finalValue)
         {
-            // 2. Find where finalValue came from
-            //    Place the caret on finalValue below
-            //    Invoke Inspect This and select Value Origin
-            //    The results are shown in a new window
-            //    Expanding the tree will walk up the call stack to find the origin of the value
+            // 2. 寻找参数"finalValue"从哪里来
+            //    将光标放在"finalValue"上, 执行Inspect This
+            //    选择 Value Origin (值来源)
+            //    结果会显示在一个新的检查窗口
+            //    展开树状结构, 在调用堆栈中寻找该值的来源
             //
-            // 3. Display the preview pane in the results window
+            // 3. 点击Show Preview按钮, 打开结果窗口中的预览面板
             Console.WriteLine(finalValue);
         }
     }
