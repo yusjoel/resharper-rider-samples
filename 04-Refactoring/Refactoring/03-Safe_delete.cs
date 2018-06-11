@@ -2,36 +2,35 @@
 
 namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Safe delete
+    // 安全删除
     //
-    // Only delete code element if it's not being used
+    // 仅在该代码元素没有使用时进行删除
     //
     // Ctrl+R, D (VS)
     // Alt+Delete (IntelliJ)
 
     public class ClassWithUsedAndUnusedField
     {
-        // 1. Delete unused field
-        //    Place text caret on UnusedField and invoke Safe Delete
-        //    Hit OK, field is removed
+        // 1. 安全删除没有使用的字段
+        //    将光标放在"UnusedField"上, 执行Safe Delete
+        //    点击"Next >", 这个字段就会被删除
         public string UnusedField = "hello world";
 
-        // 2. Safe delete used field
-        //    Place text caret on UsedField and invoke Safe Delete
-        //    Hit OK, ReSharper warns field is used
-        //    Click on the word "Usage" to navigate to the usage
-        //    Edit/remove the usage, if required
-        //    Click Next to remove field even with usages, or Cancel
+        // 2. 安全删除使用的字段
+        //    将光标放在"UsedField"上, 执行Safe Delete
+        //    点击"Next >", ReSharper会警告这个字段被使用
+        //    点击文字"Usage"跳转到使用的地方, 可以修改或者删除使用的代码
+        //    点击"Next >"可以强行删除该字段, 也可以点"Cancel"离开
         public string UsedField = "hello world";
 
-        // 3. Safe delete unused parameter
-        //    Place text caret on unusedParameter and invoke Safe Delete
-        //    Parameter isn't used inside method, so is deleted
-        //    Value passed as parameter when calling Method is also deleted
-        // 3a. Safe delete used parameter
-        //     Place text caret on usedParameter and invoke Safe Delete
-        //     ReSharper warns parameter is used, can navigate to usage
-        //     Next will remove anyway, leaving broken code, or Cancel
+        // 3. 安全删除没有使用的参数
+        //    将光标放在"unusedParameter"上, 执行Safe Delete
+        //    这个参数在方法内没有被使用到, 所以被删除了
+        //    调用该方法时传入的值也被删除了
+        // 3a.  安全删除使用的参数
+        //     将光标放在"usedParameter"上, 执行Safe Delete
+        //     ReSharper会警告这个参数被使用, 同样可以跳转到使用的地方
+        //     点击"Next >"可以强行删除该参数, 也可以点"Cancel"离开
         public void Method(string usedParameter, string unusedParameter)
         {
             Console.WriteLine(usedParameter);
@@ -43,11 +42,11 @@ namespace JetBrains.ReSharper.Koans.Refactoring
         }
     }
 
-    // 4. Safe Delete unused class
-    //    Place text on UnusedClass and invoke Safe Delete
-    //    ReSharper asks to remove empty files
-    //    Next will analyse for usages, find none and delete type
-    //    If file didn't contain any other definitions, the file would be deleted
+    // 4. 安全删除没有使用的类
+    //    将光标放在"UnusedClass"上, 执行Safe Delete
+    //    ReSharper会询问是否要删除空文件
+    //    点"Next >"会分析该类的使用, 如果没有找到使用会直接删除
+    //    如果文件内没有其他定义, 那么文件也会被删除
     public class UnusedClass
     {
     }
@@ -58,7 +57,7 @@ namespace JetBrains.ReSharper.Koans.Refactoring
     {
         public static void Method()
         {
-            // Navigate back (Ctrl+-)
+            // 按Ctrl+-返回
             Console.WriteLine(new ClassWithUsedAndUnusedField().UsedField);
         }
     }
