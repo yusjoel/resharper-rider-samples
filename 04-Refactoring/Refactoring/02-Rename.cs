@@ -3,9 +3,9 @@ using JetBrains.ReSharper.Koans.Refactoring.ExampleCode;
 
 namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Rename
+    // 重命名
     //
-    // Renames an element and all usages of it
+    // 重命名指定元素和所有使用到它的地方
     //
     // Ctrl+R, R (VS)
     // F2 (IntelliJ)
@@ -14,21 +14,19 @@ namespace JetBrains.ReSharper.Koans.Refactoring
     {
         public static RenameType Create()
         {
-            // 1. Rename a type
-            //    Place text caret on any usage of type
-            //    Invoke rename refactoring and rename
+            // 1. 重命名类型
+            //    将光标放在"RenameType"上, 执行Rename, 在弹出的对话框中进行重命名
             return new RenameType();
         }
 
-        // Constructor is also renamed
+        // 构造函数也会自动重命名
         public RenameType()
         {
         }
     }
 
-    // 2. Rename method, property, variable, field, parameter
-    //    Place text caret on method, property, variable, field or parameter name
-    //    Invoke rename refactoring and rename
+    // 2. 重命名方法、属性、变量、字段和参数
+    //    将光标放在这些元素上, 执行Rename
     public class RenameMember
     {
         private const int Value = 42;
@@ -47,10 +45,9 @@ namespace JetBrains.ReSharper.Koans.Refactoring
     {
         public void Method()
         {
-            // 2. Rename across files
-            //    Place text caret on type name or method name
-            //    Invoke rename refactoring
-            //    Symbols in other file are updated (navigate to check)
+            // 2. 跨文件重命名
+            //    将光标放在类型名或者方法名上, 执行Rename
+            //    其他文件中也更新了新名字
             RenameInAnotherFile.StaticMethod();
         }
 
@@ -60,8 +57,8 @@ namespace JetBrains.ReSharper.Koans.Refactoring
         }
     }
 
-    // 3. Undo local rename
-    //    If rename is in single file, normal undo (Ctrl+Z) will rename back
+    // 3. 撤销本地的重命名
+    //    如果重命名仅在一个文件中, 那么普通的撤销命名(Ctrl+Z)也能复原重命名
     public class UndoLocalRename
     {
         const string Message = "hello world";
@@ -72,56 +69,51 @@ namespace JetBrains.ReSharper.Koans.Refactoring
         }
     }
 
-    // 4. Undo rename across files
-    //    By default, ReSharper does not open modified files, so Ctrl+Z does not work
-    //    Either make ReSharper open the files, or simply rename back
+    // 4. 撤销跨文件的重命名
+    //    ReSharper默认是不会打开修改的文件的， 所以按Ctrl+Z进行撤销是没有用的
+    //    要么设置ReSharper打开这些文件, 要么重命名回去
     public class UndoRenameAcrossFiles
     {
         public void Method()
         {
-            // 4a. Place text caret on type name or method name
-            //     Invoke rename refactoring
-            //     On first page, check "To enable undo, open all files with changes after editing"
-            //     Rename symbol
-            //     The other file is opened, and marked modified
-            //     Ctrl+Z will undo the change across all files
+            // 4a. 将光标放在类型名或者方法名上, 执行Rename
+            //     勾选 "To enable undo, open all files with changes for editing"
+            //     重命名后, 另一个文件被打开, 并且标记为被修改, 执行 Ctrl+Z 可以跨文件撤销重命名操作
             RenameInYetAnotherFile.StaticMethod();
         }
 
         public void Method2()
         {
-            // 4b. Place text caret on type name or method name
-            //     Make sure RenameInAnotherFile.cs is closed
-            //     Invoke rename refactoring
-            //     On first page, UNCHECK "To enable undo, open all files with changes after editing"
-            //     Rename symbol
-            //     The other file is not opened, but modified
-            //     Ctrl+Z will undo the local change, but produce uncompilable code
-            //     Redo the local change (Ctrl+Y)
-            //     Perform rename refactoring back to original name
+            // 4b. 将光标放在类型名或者方法名上
+            //     关闭 RenameInAnotherFile.cs 这个文件
+            //     执行Rename
+            //     取消勾选 "To enable undo, open all files with changes for editing"
+            //     重命名后, 有另一个文件标记为已修改, 但是没有被打开
+            //     执行 Ctrl+Z 可以撤销当前文件的修改, 并产生了一个编译错误, 执行重做(Ctrl+Y)
+            //     再次执行重命名操作复原成原来的名字
             RenameInAnotherAnotherFile.StaticMethod();
         }
     }
 
-    // 5. Renaming in string literals and comments
-    //    Place text caret on type definition (not in comment or string literal)
-    //    Invoke rename refactoring and rename
-    //    Note second page asking confirmation to rename in string literals and comments
+    // 5. 重命名字符串文本和注释
+    //    将光标放在类型名上, 执行Rename
+    //    确保 "Search in comments and string literals" 被勾选
+    //    在第二个页面, 勾选 "Rename usages in comments and string literals"
+    //    可以将注释中和文本中的文本全部替换
     public class RenameInStringLiteral
     {
-        // Type name in comment: RenameInStringLiteral
-        public const string Message = "Type name in string literal: RenameInStringLiteral";
+        // 注释中的类型名: RenameInStringLiteral
+        public const string Message = "字符串文本中的类型名: RenameInStringLiteral";
     }
 
     public class InlineRename
     {
         public void Method()
         {
-            // 6. Inline renaming
-            //    If the scope of the change is local, the rename can be performed inline
-            //    Place text caret on message
-            //    Invoke rename refactoring
-            //    Refactoring is applied inline, with suggestions
+            // 6. 内联地重命名
+            //    如果重命名的作用域是局部的, 那么重命名可以内联地进行
+            //    将光标放在"message"上, 执行Rename
+            //    重命名对话框没有弹出, 你可以直接输入要改的名字, ReSharper也弹出了一个包含建议名字的列表
             const string message = "Hello world";
             Console.WriteLine(message);
         }
@@ -131,11 +123,10 @@ namespace JetBrains.ReSharper.Koans.Refactoring
     {
         private readonly RenameParameter renameParameter;
 
-        // 7. Rename related symbols
-        //    When renaming a type that is assigned to a variable, field or parameter, ReSharper prompts to rename the assigned to symbol
-        //    Place text caret on RenameParameter
-        //    Invoke rename refactoring
-        //    Type is renamed, ReSharper prompts to rename the parameter and the field
+        // 7. 重命名相关的符号
+        //    但重命名一个用于变量、字段或者参数的类型时， ReSharper会提示这些符号
+        //    将光标放在"RenameParameter"上, 执行Rename
+        //    在第二个页面， 勾选"Rename related symbols", 可以重命名参数和字段
         public RenameRelatedSymbols(RenameParameter renameParameter)
         {
             this.renameParameter = renameParameter;
@@ -146,10 +137,9 @@ namespace JetBrains.ReSharper.Koans.Refactoring
         }
     }
 
-    // 7a. Rename related symbols in derived classes
-    //     Place text caret on arg
-    //     Invoke rename refactoring and rename parameter
-    //     ReSharper prompts to rename the same parameter in the derived class
+    // 7a. 在衍生类中重命名相关的符号
+    //     将光标放在"arg"上, 执行Rename
+    //     ReSharper会提示重命名衍生类中的参数名
     public interface IThing
     {
         void Method(string arg);
@@ -163,12 +153,10 @@ namespace JetBrains.ReSharper.Koans.Refactoring
     }
 
 
-    // 8. Apply rename refactoring, after change
-    //    After changing the name of a symbol manually, ReSharper can apply the rename refactoring
-    //    Place text caret on ApplyRenameRefactoring
-    //    MANUALLY change the type name (do not invoke refactoring)
-    //    Note the dotted line around the type name
-    //    Alt+Enter and select "Apply rename refactoring"
+    // 8. 修改名字后再应用重命名
+    //    手动地修改符号名后, ReSharper还可以应用重命名
+    //    手动地修改类型名"ApplyRenameRefactoring"
+    //    注意到虚线围绕着修改后的类名, 按Alt+Enter, 选择"Apply rename refactoring"
     public class ApplyRenameRefactoring
     {
         public static ApplyRenameRefactoring Create()
@@ -176,11 +164,10 @@ namespace JetBrains.ReSharper.Koans.Refactoring
             return new ApplyRenameRefactoring();
         }
 
-        // 8a. Cancel apply rename refactor prompt with Escape
-        //     Place text caret on AutoProperty
-        //     MANUALLY change the property name (do not invoke refactoring)
-        //     Note the dotted line around the propert name
-        //     Hit Escape to cancel the dotted line
+        // 8a. 按Escape取消应用重命名状态
+        //     将光标放在"Name"上, 手动地修改属性名
+        //     意到虚线围绕着修改后的属性名
+        //     按 Escape 取消虚线
         public string Name { get; set; }
     }
 }
