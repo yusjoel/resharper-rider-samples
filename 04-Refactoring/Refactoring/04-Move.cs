@@ -55,7 +55,7 @@
     //    将光标放在类的定义上, 执行Move
     //    选择 "Move Type To Another Namespace"
     //    ReSharper 会建议当前的命名空间, 在后面加上".MoveTarget", 最终的命名空间是"JetBrains.ReSharper.Koans.Refactoring.Target"
-    //    ReSharper会将该类移动到新的命名空间, 但还是会放在当前文件当中, 不过会放到文件末尾
+    //    ReSharper会将该类移动到文件末尾处的命名空间中
     public class MoveToAnotherNamespace
     {
         public void Method()
