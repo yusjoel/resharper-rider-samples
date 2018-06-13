@@ -3,16 +3,16 @@ using System.Windows.Forms;
 
 namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Introduce Field
+    // 引入字段
     //
-    // Create a field in the current class from selection
+    // 在当前类中根据选中内容创建字段
     //
     // Ctrl+R, F (VS)
     // Ctrl+Alt+D (IntelliJ)
 
-    // Inline Field
+    // 内联字段
     //
-    // Replaces field usage with the contents of the field
+    // 将字段的使用替换成字段的内容
     //
     // Ctrl+R, I (VS)
     // Ctrl+Alt+N (IntelliJ)
@@ -21,10 +21,10 @@ namespace JetBrains.ReSharper.Koans.Refactoring
     {
         public void InitialiseForm()
         {
-            // 1. Introduce Field
-            //    Place the caret on button and invoke Introduce Field
-            //    Choose name and where to initialise field - current location, field initialiser or constructor
-            //    Choose visibility (private, public, etc.) and if to make static/readonly
+            // 1. 引入字段
+            //    将光标放在变量"button"上, 执行Introduce Field
+            //    选择字段名和初始化的位置 - 当前位置, 字段初始化器还是构造函数
+            //    选择可见性(私有、公共等等)以及是否要设为静态和只读
             var form = new Form();
             var button = new Button();
             form.Controls.Add(button);
@@ -32,12 +32,12 @@ namespace JetBrains.ReSharper.Koans.Refactoring
 
         public void InitialiseForm2()
         {
-            // 2. Introduce Field for multiple instances
-            //    Select "new Button()" (Use expand selection Ctrl+Alt+Right (VS) Ctrl+W (IntelliJ))
-            //    Invoke Introduce Field
-            //    ReSharper highlights all usages across ALL methods, prompts for one usage, all across methods or all in this method
-            //    Choose name and where to initialise field - current location, field initialiser or constructor
-            //    Choose visibility (private, public, etc.) and if to make static/readonly
+            // 2. 从多个实例中引入字段
+            //    选择 "new Button()" (使用扩展选择 Ctrl+Alt+Right (VS) Ctrl+W (IntelliJ))
+            //    执行Introduce Field
+            //    ReSharper会高亮所有方法中的所有使用, 并提示替换4处（所有方法中的所有使用）、3处（当前方法中的所有使用）还是1处（当前使用）
+            //    选择字段名和初始化的位置 - 当前位置, 字段初始化器还是构造函数
+            //    选择可见性(私有、公共等等)以及是否要设为静态和只读
             var form = new Form();
             form.Controls.Add(new Button());
             form.Controls.Add(new Button());
@@ -46,10 +46,9 @@ namespace JetBrains.ReSharper.Koans.Refactoring
 
         public void IntroduceConstant()
         {
-            // 3. Introduce Constant
-            //    Select the "Hello world" string literal
-            //    Invoke Introduce Field
-            //    Select Introduce Constant on dialog (Alt+I)
+            // 3. 引入常量
+            //    选择文本"Hello world"， 并执行Introduce Field
+            //    在对话框界面按Alt+I， 选中"Introduce constant"
             Console.WriteLine("Hello world");
         }
 
@@ -57,9 +56,8 @@ namespace JetBrains.ReSharper.Koans.Refactoring
 
         public void InlineField()
         {
-            // 4. Inline Field
-            //    Place caret on MyField
-            //    Invoke Inline Field
+            // 4. 内联字段
+            //    选中"MyField", 执行Inline Field
             Console.WriteLine(MyField);
         }
 
@@ -67,9 +65,8 @@ namespace JetBrains.ReSharper.Koans.Refactoring
 
         public void InlineFieldOnMultipleInstances()
         {
-            // 5. Inline Field
-            //    Place caret on MyOtherField
-            //    Invoke Inline Field
+            // 5. 内联字段
+            //    选中"MyOtherField", 执行Inline Field
             Console.WriteLine(MyOtherField);
             Console.WriteLine(MyOtherField);
             Console.WriteLine(MyOtherField);

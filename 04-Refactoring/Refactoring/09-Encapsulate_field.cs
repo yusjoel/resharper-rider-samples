@@ -1,17 +1,16 @@
 ﻿namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Encapsulate Field
+    // 封装字段
     //
-    // Convert a field to a property
+    // 将字段转成属性
     //
     // Ctrl+R, E
 
     public class EncapsulateField
     {
-        // 1. Encapsulate Field
-        //    Place text caret on field definition
-        //    Invoke Encapsulate Field
-        //    ReSharper prompts for options - auto property, read/write, visibility, etc.
+        // 1. 封装字段
+        //    将光标放在字段定义上, 执行Encapsulate Field
+        //    ReSharper提示下列选项 - 自动属性, 读/写, 可见性等等
         public string Name;
     }
 }
