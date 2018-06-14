@@ -4,18 +4,16 @@ namespace JetBrains.ReSharper.Koans.Refactoring
 {
     namespace ExtractInterface
     {
-        // Extract Interface
+        // 提取接口
         //
-        // Extracts an interface based on the current class
+        // 从当前类中提取接口
         //
-        // No keyboard shortcut. Invoke via Refactor This menu
-        // Ctrl+Shift+R
+        // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
-        // 1. Extract interface
-        //    Place text caret on type definition
-        //    Invoke Refactor This → Extract Interface
-        //    Confirm name of interface, location and which members
-        //    If selecting private or protected members, ReSharper warns that they will be made public
+        // 1. 提取接口
+        //    将光标放在类型定义上, 执行Extract Interface
+        //    确认接口名, 位置和选择成员
+        //    如果选择了私有或者保护的成员, ReSharper 会警告这些成员会自动变成公共
         public class Person
         {
             public Person(string forename, string surname, int age)
@@ -43,11 +41,10 @@ namespace JetBrains.ReSharper.Koans.Refactoring
             }
         }
 
-        // 2. Extract interface from hierarchy
-        //    Place text caret on type definition
-        //    Invoke Refactor This → Extract Interface
-        //    Confirm name of interface, location and which members - list includes inherited members
-        //    If selecting private or protected members, ReSharper warns that they will be made public
+        // 2. 从继承层次中提取接口
+        //    将光标放在类型定义上, 执行Extract Interface
+        //    确认接口名, 位置和选择成员, 这次成员中包含继承的成员
+        //    如果选择了私有或者保护的成员, ReSharper 会警告这些成员会自动变成公共
         public class DerivedPerson : BasePerson
         {
             public DerivedPerson(string forename, string surname, int age, string title)

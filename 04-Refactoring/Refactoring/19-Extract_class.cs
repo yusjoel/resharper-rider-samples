@@ -4,14 +4,12 @@ namespace JetBrains.ReSharper.Koans.Refactoring
 {
     namespace ExtractClass
     {
-        // Extract Class
+        // 提取类
         //
-        // Creates a new class based on members in the existing class.
-        // Updates references to the extracted members to refer to
-        // an instance of the new class
+        // 根据当前类的成员创建一个新的类
+        // 对提取的成员的引用会更新成对新生成的类的实例的引用
         //
-        // No keyboard shortcut. Invoke via Refactor This menu
-        // Ctrl+Shift+R
+        // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
         public class Person
         {
@@ -19,17 +17,15 @@ namespace JetBrains.ReSharper.Koans.Refactoring
             public string Surname { get; set; }
             public int Age { get; set; }
 
-            // 1. Extract address to new class
-            //    Select the members of the class to extract (the 5 properties below)
-            //    Invoke Refactor This → Extract Class
-            //    ReSharper shows dialog with properties already selected to move to extracted class
-            //    Give name to extracted class ("Address" - ReSharper then populates reference to be extracted "address")
-            //    By default, the original properties are removed
-            //      Select from the drop down for "Source class member":
-            //      None - original property is removed
-            //      Create copy - a copy of the original property is left
-            //      Create delegating wrapper - the original property calls into the new instance of the extracted class
-            //    Any usages are updated to use the new Address property
+            // 1. 将地址信息提取成一个新类
+            //    选择要提取的成员，也就是下面5个属性，执行Extract Class
+            //    ReSharper会弹出一个对话框， 选中的属性已经被勾选
+            //    给提取的新类起一个名字，如Address
+            //    在默认情况下， 原来的属性会被删除
+            //      但也可以在 "Source class member" 栏中进行选择:
+            //      None - 原来的属性会被删除
+            //      Create delegating wrapper - 对原属性的调用会变成访问提取的类的实例
+            //      Create copy - 会保留原属性
             public string HouseNumber { get; set; }
             public string Street { get; set; }
             public string County { get; set; }
@@ -43,7 +39,7 @@ namespace JetBrains.ReSharper.Koans.Refactoring
             {
                 var person = new Person();
 
-                // 2. Ensure all properties still work
+                // 2. 这里用来检查应用是否还正确
                 Console.WriteLine(person.HouseNumber);
                 Console.WriteLine(person.Street);
                 Console.WriteLine(person.County);

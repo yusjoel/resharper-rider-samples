@@ -4,19 +4,16 @@ namespace JetBrains.ReSharper.Koans.Refactoring
 {
     namespace ExtractSuperclass
     {
-        // Extract Superclass
+        // 提取超类
         //
-        // Extract members to act as a new base class to the current class
+        // 将当前类的成员提取为新的基类
         //
-        // No keyboard shortcut. Invoke via Refactor This menu
-        // Ctrl+Shift+R
+        // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
-        // 1. Extract superclass
-        //    Place text caret on type definition
-        //    Invoke Refactor This → Extract Superclass
-        //    Confirm name of base class, location and which members
-        //      (Select Forename, Surname and Age)
-        //    ReSharper creates a new class with the members, inherits from it
+        // 1. 提取超类
+        //    将光标放在类型定义上, 执行Extract Superclass
+        //    确认基类的名字, 位置和成员, 这里选中Forename、Surname和Age
+        //    ReSharper会创建一个包含这些成员的基类, 并且继承它
         public class Person
         {
             public Person(string forename, string surname, int age)
@@ -37,11 +34,10 @@ namespace JetBrains.ReSharper.Koans.Refactoring
             public int Age { get; private set; }
         }
 
-        // 2. Extract superclass from hierarchy
-        //    Place text caret on type definition
-        //    Invoke Refactor This → Extract Superclass
-        //    Confirm name of base class, location and which members - list includes inherited members
-        //      (Select SayHello)
+        // 2. 从继承层次中提取超类
+        //    将光标放在类型定义上, 执行Extract Superclass
+        //    确认基类的名字, 位置和成员, 这次成员中包含继承的成员
+        //    这里选中SayHello
         public class TitledPerson : SimplePerson
         {
             public TitledPerson(string forename, string surname, int age, string title)

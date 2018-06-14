@@ -2,21 +2,17 @@
 
 namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Pull Members Up
+    // 提升成员层次
     //
-    // Pulls members up the inheritance chain from the current type to the base type.
-    // Moves members from a derived type to a base type
+    // 从当前类将成员提升到基类
     //
-    // No keyboard shortcut. Invoke via Refactor This menu
-    // Ctrl+Shift+R
+    // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
-    // Push Members Down
+    // 降低成员层次
     //
-    // Pushes members down the inheritance chain from the current type to inheriting types.
-    // Moves members from a base type to a derived type
+    // 从当前类将成员降低到继承类
     //
-    // No keyboard shortcut. Invoke via Refactor This menu
-    // Ctrl+Shift+R
+    // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
     namespace PullUp
     {
@@ -28,10 +24,10 @@ namespace JetBrains.ReSharper.Koans.Refactoring
         {
         }
 
-        // 1. Pull members up to base type
-        //    Invoke Refactor This → Pull Members Up on Derived
-        //    Choose the base type to move to (Derived or Base)
-        //    Choose the members to move
+        // 1. 将成员提升到基类
+        //    将光标放在"MostDerived"上, 执行Pull Members Up
+        //    选择要提升到的类型, Derived 还是 Base
+        //    选择要提升的成员
         public class MostDerived : Derived
         {
             public string PropertyOnDerived { get; set; }
@@ -40,19 +36,19 @@ namespace JetBrains.ReSharper.Koans.Refactoring
 
     namespace PushDown
     {
-        // 2. Push members down from Base to inheriting types
-        //    Invoke Refactor This → Push Members Down on Base
-        //    Choose which inheriting types to push to
-        //    Choose which members to push down
+        // 2. 将成员降低到继承类中
+        //    将光标放在"Base"上, 执行Push Members Down
+        //    选择要降低到的类型, Derived 还是 Derived2
+        //    选择要降低的成员
         public class Base
         {
             public string PropertyOnBase { get; set; }
 
-            // a. Push members down on property that is in use
-            //    Invoke Refactor This → Push Members Down on Base
-            //    Choose which inheriting types to push to
-            //    Choose UsedPropertyOnBase
-            //    ReSharper warns that UsedPropertyOnBase cannot be moved
+            // a. 降低被使用的成员的层次
+            //    将光标放在"UsedPropertyOnBase"上, 执行Push Members Down
+            //    选择要降低到的类型, Derived 还是 Derived2
+            //    UsedPropertyOnBase已经被默认选中了
+            //    ReSharper 会警告UsedPropertyOnBase不能降低层次
             public string UsedPropertyOnBase { get; set; }
         }
 

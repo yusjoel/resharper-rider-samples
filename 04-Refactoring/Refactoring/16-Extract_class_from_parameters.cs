@@ -1,17 +1,15 @@
 ﻿namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Extract Class From Parameters
+    // 从参数中提取类
     //
-    // Creates a class based on the parameters to a method, and creates it at call sites
+    // 基于一个方法的参数创建一个类, 并且在所有调用处创建该类
     //
-    // No keyboard shortcut. Invoke via Refactor This menu
-    // Ctrl+Shift+R
+    // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
     public class ExtractClassFromParameters
     {
-        // 1. Extract class from parameters
-        //    Place text caret on method definition
-        //    Invoke Refactor This → Extract Class From Parameters
+        // 1. 从参数中提取类
+        //    将光标放在方法的定义上, 执行Extract Class From Parameters (???)
         //    ReSharper prompts for options - name, class/struct, nested/top level
         //      and which parameters should be extracted
         public ExtractClassFromParameters(string forename, string surname, int age)
