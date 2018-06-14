@@ -2,26 +2,22 @@
 
 namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Convert Method to Property
+    // 将方法转成属性
     //
-    // No shortcut. Invoke via Refactor This menu
-    // Ctrl+Shift+R
+    // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
-    // Convert Property to Method(s)
+    // 将属性转成方法
     //
-    // Converts a property to a getter and/or setter method(s)
+    // 将属性转成getter和setter
     //
-    // No shortcut. Invoke via Refactor This menu
-    // Ctrl+Shift+R
+    // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
     public class ConvertMethodToProperty
     {
-        // 1. Convert method to property
-        //    Method must have no parameters
-        //    Place text caret on method definition
-        //    Invoke Convert Method To Property
-        //    ReSharper suggests name
-        //    Confirm to convert
+        // 1. 将方法转成属性
+        //    方法不能有参数
+        //    将光标放在方法的定义上, 执行Convert Method To Property
+        //    ReSharper 会建议属性名, 确认后执行转换
         private string GetName()
         {
             return "Matt";
@@ -37,32 +33,28 @@ namespace JetBrains.ReSharper.Koans.Refactoring
     {
         private string backingField;
 
-        // 2. Convert auto property to methods
-        //    Place text caret on property definition
-        //    Invoke Convert property to methods
-        //    Optionally generate getter and/or setter
-        //    Confirm - ReSharper will automatically generate backing field
+        // 2. 将自动属性转换成方法
+        //    将光标放在属性的定义上, 执行Convert Property To Method(s)
+        //    你可以选择生成getter和setter, 确认后ReSharper会自动生成一个对应的字段
         public string AutoProperty { get; set; }
 
-        // 3. Convert property to methods
-        //    Place text caret on property definition
-        //    Invoke Convert property to methods
-        //    Optionally generate getter and/or setter
+        // 3. 将属性转换成方法
+        //    将光标放在属性的定义上, 执行Convert Property To Method(s)
+        //    你可以选择生成getter和setter
         public string PropertyWithBackingField
         {
             get { return backingField; }
             set { backingField = value; }
         }
 
-        // 4. Convert getter only property to method
-        //    Place text caret on property definition
-        //    Invoke Convert property to methods
-        //    Will only generate getter
+        // 4. 将只读的属性转换成方法
+        //    将光标放在属性的定义上, 执行Convert Property To Method(s)
+        //    只会生成getter
         public string GetterOnlyProperty { get { return backingField; } }
 
         public void Output()
         {
-            // 5. Confirm usages are still correct
+            // 5. 这里用来检查使用是否还正确
             Console.WriteLine(AutoProperty);
             Console.WriteLine(PropertyWithBackingField);
             Console.WriteLine(GetterOnlyProperty);

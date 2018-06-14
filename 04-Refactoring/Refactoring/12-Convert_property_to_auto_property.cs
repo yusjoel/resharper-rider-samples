@@ -1,11 +1,10 @@
 ﻿namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Convert Property to Auto Property
+    // 将属性转换成自动属性
     //
-    // Refactoring has no keyboard shortcut. Invoke via Refactor This menu
-    // Ctrl+Shift+R
+    // 没有快捷键, 执行Refactor This后在弹出菜单中选择
     //
-    // Also available as Quick Fix via Alt+Enter
+    // 也可以按Alt+Enter, 通过Quick Fix来执行
 
     public class ConvertPropertyToAutoProperty
     {
@@ -13,29 +12,26 @@
         private string backingStore2;
         private string backingStore3;
 
-        // 1. Convert to Auto Property with refactoring
-        //    Place text caret on property definition
-        //    Invoke Refactor This menu → Convert Property to Auto-Property
+        // 1. 通过重构命令转换成自动属性
+        //    将光标放在属性定义上, 执行Convert Property to Auto-Property
         public string PropertyWithBackingStore
         {
             get { return backingStore; }
             set { backingStore = value; }
         }
 
-        // 2. Convert to Auto Property with Alt+Enter
-        //    Note shown as suggestion
-        //    Place text caret on property definition
-        //    Alt+Enter and select Convert to auto-property
+        // 2. 通过Alt+Enter转换成自动属性
+        //    这里标记为建议
+        //    将光标放在属性定义上, 按 Alt+Enter, 然后选择 Convert to auto-property
         public string PropertyWithBackingStore2
         {
             get { return backingStore2; }
             set { backingStore2 = value; }
         }
 
-        // 2. Convert to read-only Auto Property with Alt+Enter
-        //    Note shown as hint
-        //    Place text caret on property definition
-        //    Alt+Enter and select Convert to auto-property
+        // 3. 通过Alt+Enter转换成只读的自动属性
+        //    这里标记为提示 (并没有)
+        //    将光标放在属性定义上, 按 Alt+Enter, 然后选择 Convert to auto-property
         public string PropertyWithBackingStore3
         {
             get { return backingStore3; }

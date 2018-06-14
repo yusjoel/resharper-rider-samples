@@ -2,20 +2,17 @@
 
 namespace JetBrains.ReSharper.Koans.Refactoring
 {
-    // Convert Abstract Class to Interface
+    // 将抽象类转换成接口
     //
-    // No keyboard shortcut. Invoke via Refactor This menu
-    // Ctrl+Shift+R
+    // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
-    // Convert Interface to Abstract Class
+    // 将接口转换成抽象类
     //
-    // No keyboard shortcut. Invoke via Refactor This menu
-    // Ctrl+Shift+R
+    // 没有快捷键, 执行Refactor This后在弹出菜单中选择
 
 
-    // 1. Convert abstract class to interface
-    //    Place text caret on class definition
-    //    Invoke Refactor This → Convert Abstract Class to Interface
+    // 1. 将抽象类转换成接口
+    //    将光标放在类定义上, 执行Convert Abstract Class to Interface
     public abstract class AbstractClass
     {
         public abstract string Name { get; protected set; }
@@ -37,12 +34,10 @@ namespace JetBrains.ReSharper.Koans.Refactoring
         }
     }
 
-    // 2. Convert abstract class to interface, when abstract class has implementations
-    //    Place text caret on class definition
-    //    Invoke Refactor This → Convert Abstract Class to Interface
-    //    ReSharper warns abstract class has implementation methods
-    //    Cancel, or continue to convert to interface and remove the body of the implementation
-    //      (Derived class will not compile)
+    // 2. 抽象类中有实现代码的情况, 将抽象类转换成接口
+    //    将光标放在类定义上, 执行Convert Abstract Class to Interface
+    //    ReSharper 会警告抽象类中有已实现方法
+    //    可以取消, 也可以继续转换, 所有实现会被移除, 衍生类会无法编译通过
     public abstract class AbstractClassWithImplementation
     {
         public abstract string Name { get; protected set; }
@@ -69,11 +64,9 @@ namespace JetBrains.ReSharper.Koans.Refactoring
         }
     }
 
-    // 3. Convert interface to abstract class
-    //    Place text caret on class definition
-    //    Invoke Refactor This → Convert Abstract Class to Interface
-    //    ReSharper creates abstract class with no implementations
-    //      and makes implementing methods "override" in derived class
+    // 3. 将接口转换成抽象类
+    //    将光标放在接口定义上, 执行Convert Interface to Abstract Class
+    //    ReSharper会创建抽象类, 其中没有任何实现, 然后在衍生类中所有实现方法前加上"override"关键字
     public interface IPerson
     {
         string Name { get; }
