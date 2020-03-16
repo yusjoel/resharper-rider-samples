@@ -1,72 +1,67 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
+﻿using MvcApplication5.Models;
 using System.Web.Mvc;
-using MvcApplication5.Models;
 
 namespace MvcApplication5.Controllers
 {
     public class HomeController : Controller
     {
-        // 1. Navigate to view
+        // 1. 跳转到视图
         public ActionResult Index(int? id)
         {
-            // Ctrl+Click on View
-            // Navigate to Index.cshtml, or definition of View method
+            // 在"View"上按Ctrl+Click
+            // 会跳转到Index.cshtml, 或者View方法的定义
             if (id == null)
                 return View();
 
-            // Ctrl+Click on string literal argument
+            // 在字符串型参数上按Ctrl+Click
             return View("Index");
         }
 
-        // 2. Create view from usage
+        // 2. 从使用中创建视图
         public ActionResult Details(int? id)
         {
-            // View is marked as error, but code compiles
-            // Ctrl+Click navigates straight to definition of View method
-            // Alt+Enter to create view as .cshtml, .aspx, with layout, via VS wizard, etc.
+            // 下面的View标记为错误, 但是代码是可以编译
+            // 使用Ctrl+Click会直接跳转到View方法
+            // 按Alt+Enter, 可以选择
+            // "Create Razor views"来创建.cshtml文件,
+            // "Create ASPX views"来创建.aspx文件,
+            // "Create view 'Details' with VS"使用VS向导来创建视图
             if (id == null)
                 return View();
 
-            // View is marked as error, but code compiles
-            // Ctrl+Click navigates straight to definition of View method
-            // Alt+Enter to create view as .cshtml, .aspx, with layout, via VS wizard, etc.
+            // 下面的View标记为错误, 但是代码是可以编译
+            // 使用Ctrl+Click会直接跳转到View方法
+            // 在参数上按Alt+Enter, 可以如之前一般创建视图
             return View("MoreDetails");
         }
 
-        // 3. Code completion for views
+        // 3. 视图的代码补全
         public ActionResult DoThing()
         {
-            // Place text caret inside string literal
-            // Invoke completion (Ctrl+Space)
+            // 将光标放在下面的字符串内, 执行Code Completion
             return View("");
         }
 
-        // 3. Code completion in RedirectToAction
+        // 3. RedirectToAction的代码补全
         [HttpPost]
         public ActionResult Create(SampleModel model)
         {
-            // a. Place text caret inside string literal for actionName
-            //    Invoke completion (Ctrl+Space) - suggests actions from this controller
+            // a. 将光标放在actionName字符串内, 执行Code Completion
+            //    会建议当前控制器的行为
             if (model == null)
             {
-                // b. Ctrl+Click on RedirectToAction method
-                //    Navigates to method or controller
+                // b. 对着RedirectToAction方法按Ctrl+Click
+                //    会转向方法或者控制器
                 return RedirectToAction(actionName: "");
             }
 
-            // c. Place text caret inside string literal for actionName
-            //    Invoke completion (Ctrl+Space) - no suggestions
-            //    Place text caret inside string literal for controllerName
-            //    Invoke completion - suggests controllers
-            //    Place text caret inside string literal for actionName
-            //    Invoke completion - suggests actions for selected controller
+            // c. 将光标放在actionName字符串内, 执行Code Completion, 没有建议显示
+            //    将光标放在controllerName字符串内, 执行Code Completion, 会建议控制器
+            //    再次执行第一步操作, 这次会建议选择的控制器的行为
             return RedirectToAction(actionName: "", controllerName: "");
 
-            // d. Navigate to action or controller
-            //    Ctrl+Click on string literal to navigate
+            // d. 导航至行为或者控制器
+            //    在相应文本上按Ctrl+Click
         }
 
         public ActionResult About()

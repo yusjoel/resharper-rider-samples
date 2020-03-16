@@ -1,8 +1,8 @@
-﻿Support for ASP.NET MVC
+﻿对ASP.NET MVC的支持
 -----------------------
 
-1. Support for Controller actions and views
-   Navigate to HomeController
+1. 支持控制的行为和视图
+   导航到HomeController
 
-2. Support for .cshtml views
-   Navigate to Index.cshtml (in Views\Home\Index.cshtml)
+2. 支持.cshtml视图
+   导航到Index.cshtml (在 Views\Home\Index.cshtml)

@@ -25,3 +25,35 @@
 |-------|------|------|
 | Go to | 转到 | 和VS翻译保持一致|
 | Navigate | 导航 |和VS翻译保持一致|
+| Inspect | | |
+| Convert|||
+|Refactor|重构||
+| Highlight | 高亮| |
+| squiggly | 波浪线 | |
+| hammer | 锤子 ||
+|light bulb|灯泡|
+|Caret|光标||
+|Hotspot|||
+|Symbol|符号||
+|Namespace|命名空间||
+|Type|类型||
+|Full Qualified Type Name|完全限定的类型名称||
+|Subtype|子类型||
+|Supertype|超类型||
+|Class|类||
+|Derived classe|衍生类||
+|Member|成员||
+|Constructor|构造函数||
+|Method|方法||
+|Method signature|方法签名|https://docs.microsoft.com/zh-cn/dotnet/csharp/programming-guide/classes-and-structs/methods|
+|Property|属性||
+|Auto-Property|||
+|backing field|||
+|Field|字段||
+|Statement|语句||
+|Indexer|索引器||
+|Body|xx体||
+|Block|代码块||
+|Equality members|||
+|getter|||
+|setter|||

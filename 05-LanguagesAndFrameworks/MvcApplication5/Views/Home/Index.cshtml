@@ -1,25 +1,25 @@
 ﻿@model dynamic
 
 @{
-    // 1. Invoke C# code completion (Ctrl+Space)
+    // 1. 执行Code Completion
     //this.
 
 
-    // 2. Navigate to definition of ViewBag (Ctrl+Click)
-    //    (Note ViewBag is dynamic, so cannot navigate to Title)
+    // 2. 导航到ViewBag的定义(Ctrl+Click)
+    //    (注: ViewBag是动态的,所以不能导航到Title字段)
     ViewBag.Title = "Home Page";
 
-    // 3. Navigate to _Layout.cshtml
-    //    Ctrl+Click _Layout.cshtml
-    //    Ctrl+Click Views to open folder in solution explorer
+    // 3. 导航到_Layout.cshtml
+    //    在"_Layout.cshtml"上按Ctrl+Click 
+    //    在"Views"上按Ctrl+Click, 能在解决方案浏览器中打开文件夹
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
 <div class="jumbotron">
     <h1>JetBrains ReSharper and Rider</h1>
 
-    <!-- 3. Support action name in string literal
-    Invoke code completion on actionName string literal
-    Ctrl+Click on completed actionName string literal -->
+    <!-- 3. 支持字符串型的行为名
+    将光标放在actionName内, 执行Code Completion
+    对着补全完整的actionName按Ctrl+Click -->
     <p>@Html.ActionLink(linkText: "Edit", actionName: "")</p>
 </div>
